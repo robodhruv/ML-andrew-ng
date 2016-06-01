@@ -31,9 +31,9 @@ X = [ones(m, 1) X];
 %       
 
 all_theta_t = all_theta';
-J_min = X*all_theta_t;
+pr = X*all_theta_t;
 for i = 1:size(X,1)
-  [m in] = max(J_min(i,:), [], 2);
+  [m in] = max(pr(i,:));
   p(i,1)= in;
   
 end
