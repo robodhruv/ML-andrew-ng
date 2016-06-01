@@ -30,9 +30,13 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
-
-
+all_theta_t = all_theta';
+J_min = X*all_theta_t;
+for i = 1:size(X,1)
+  [m in] = max(J_min(i,:), [], 2);
+  p(i,1)= in;
+  
+end
 
 
 
