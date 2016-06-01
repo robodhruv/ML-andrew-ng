@@ -13,6 +13,7 @@ grad = zeros(size(theta));
 [Jnorm GradNorm] = costFunction(theta, X, y);
 J = Jnorm + (sum(theta.*theta)-theta(1).^2)*lambda/(2*m);
 reg_diff = zeros(size(theta));
+
 reg_diff(1)=theta(1);
 theta_new=theta-reg_diff;
 grad = GradNorm + lambda/m*(theta_new');
