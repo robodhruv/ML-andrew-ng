@@ -25,8 +25,33 @@ Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):en
 % Setup some useful variables
 m = size(X, 1);
          
+
+y_new = zeros(m,num_labels);
+for i = 1:m
+  y_new(i, y(i))=1;
+end
+  
 % You need to return the following variables correctly 
 J = 0;
+  x_in = X;
+  x_in = [ones(m,1) x_in];
+  z2 = x_in*Theta1';
+  a2 = sigmoid(z2);
+  a2 = [ones(m,1) a2];
+  z3 = a2*Theta2';
+  a3 = sigmoid(z3);
+  hT = a3;
+K = size(Theta2,1);
+  
+  
+J = sum(sum(-y_new.*log(hT) - (ones(size(y_new))-y_new).*log(ones(size(hT))-hT)));
+J = J/m;
+
+sum_theta_2 = sum(sum((Theta1.*[zeros(size(Theta1,1), 1) Theta1(:,2:size(Theta1,2))]))) + sum(sum((Theta2.*[zeros(size(Theta2,1), 1) Theta2(:,2:size(Theta2,2))])));
+
+J = J + lambda*0.5/m*(sum_theta_2);
+
+
 Theta1_grad = zeros(size(Theta1));
 Theta2_grad = zeros(size(Theta2));
 
@@ -62,19 +87,21 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+del_3 = hT-y_new; % mxL
+Theta2_new = Theta2(:,2:end);
+del_2 = (del_3*Theta2_new).*sigmoidGradient(z2); % mxh
+D1 = del_2'*x_in; % mxh, mxf (features=400 here) => hxf
+D2 = del_3'*a2; % mxL, mxh => Lxh
 
 
 
 
 
+Theta1_add = [zeros(size(Theta1, 1),1) Theta1(:,2:end)];
+Theta2_add = [zeros(size(Theta2, 1), 1) Theta2(:,2:end)];
 
-
-
-
-
-
-
-
+Theta1_grad = D1/m + lambda/m*Theta1_add;
+Theta2_grad = D2/m + lambda/m*Theta2_add;
 
 
 
@@ -89,3 +116,4 @@ grad = [Theta1_grad(:) ; Theta2_grad(:)];
 
 
 end
+
