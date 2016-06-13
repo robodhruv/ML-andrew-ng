@@ -11,6 +11,12 @@ m = length(y); % number of training examples
 % You need to return the following variables correctly 
 J = 0;
 grad = zeros(size(theta));
+h = X*theta;
+J = 0.5/m*sum((h-y).^2) + lambda*0.5/m*(sum(theta(2:end).^2)); % Always make the code generic!
+
+
+grad(1) = sum((h-y).*X(1))/m;
+grad(2:end) = X(:,2:end)'*(h-y)/m + lambda/m*theta(2:end);
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost and gradient of regularized linear 
@@ -21,17 +27,6 @@ grad = zeros(size(theta));
 
 
 
-
-
-
-
-
-
-
-
-
 % =========================================================================
-
-grad = grad(:);
 
 end
