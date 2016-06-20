@@ -43,7 +43,7 @@ The week starts with an introduction to the programming platform meant to be use
 <a id="week-3-logistic-regression" class="anchor" href="#week-3-logistic-regression" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 3: Logistic Regression</h2>
 
 <p><i><b>Motivation</b> : Classifiers to be discussed! Most frequently used learning category.</i><br>
-This week introduces Classification as a type of ML problem and how Logistic Regression can be employed to make a Multi-class Classifier! The week starts with discussing the decision boundary and the cost function for this kind of problem. Gradient Descent was a simple optimization algorithm, and there are much to advanced and faster ones written already. This week, <code>fminuc</code> and <code>fmincg</code> are introduced, to optimize the cost function in a more efficient way. Another important topic addressed in this week is the problem of over-fitting of the dataset and how Regularization of Parameters can be implemented to solve this. The week's assignment will have you implement a Multivariable Classifier using Logistic Regression.<br>
+This week introduces Classification as a type of ML problem and how Logistic Regression can be employed to make a Multi-class Classifier! The week starts with discussing the decision boundary and the cost function for this kind of problem. Gradient Descent was a simple optimization algorithm, and there are much to advanced and faster ones written already. This week, <code>fminuc</code> and <code>fmincg</code> are introduced, to optimize the cost function in a more efficient way. Another important topic addressed in this week is the problem of over-fitting of the dataset and how Regularization of Parameters can be implemented to solve this. The week's assignment will have you implement a Multi-variable Classifier using Logistic Regression, with two classes.<br>
 <i><b>Assignment Difficulty</b> : Easy!</i></p>
 
 <hr>
@@ -52,7 +52,39 @@ This week introduces Classification as a type of ML problem and how Logistic Reg
 <a id="week-4-neural-networks---representation" class="anchor" href="#week-4-neural-networks---representation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 4: Neural Networks - Representation</h2>
 
 <p><i><b>Motivation</b> : Hold your breath... Neural Networks are here! #love </i><br>
-And after the long wait, here comes what most of us were waiting for!</p>
+And after the long wait, here comes what most of us were waiting for! The week begins with an idea of how neurons function and how we can model them using what we've learnt so far. The videos give an intuitive feel of how a simple neural network can be used to make a multi-class classifier with a much lower error! The assignment involves a simple Logistic Regression model that helps classify hand-written digits (10 class model). First cool thing you'll be doing. As a taste of neural networks, a part of the assignment involves employing an already trained network for the same process!<br>
+<i><b>Assignment Difficulty</b> : Easy (Same as previous week, with more classes)</i>  </p>
+
+<hr>
+
+<h2>
+<a id="week-5-neural-networks---learning" class="anchor" href="#week-5-neural-networks---learning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 5: Neural Networks - Learning</h2>
+
+<p><i><b>Motivation</b> : Write your FIRST Neural Network </i><br>
+This week talks real business. The task is clear: write your own neural network (similar to the one provided in the previous week) from scratch! The videos describe how the cost function will be expressed in this problem and how the NN must be designed. For the problem, the course suggests a NN with one hidden layer and the assignment is based on the same model. As a part of optimization, the course discusses the backpropogation algorithm in detail, which is indeed the best math you'll see in this course! The assignment uses all this, and more, to implement your own NN!<br>
+<i><b>Assignment Difficulty</b> : Hard</i></p>
+
+<hr>
+
+<h2>
+<a id="week-6-advice-for-applying-machine-learning" class="anchor" href="#week-6-advice-for-applying-machine-learning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 6: Advice for Applying Machine Learning</h2>
+
+<p><i><b>Motivation</b> : Real world application of all you've learnt! Tweaking each Parameter... </i><br>
+This is supposed to be the most important set of videos, if you are planning to use ML in designing real systems. The week starts with talking about evaluating the hypothesis and how you can judge the scenario. It also discusses the need for a separate Cross-Validation set and Test set, independent from the Training Set and how each conveys information about the validity of the model. Evaluation is done in terms of 'Bias' and 'Variance' and an integral part of the week is analysis and understanding of the Learning Curves. The assignment involves implementing a Regularized model and plotting Learning curves. You will also be dealing with Cross-Validation curve to analyse the bias-variance conflict.<br>
+<i><b>Assignment Difficulty</b> : Moderate </i></p>
+
+<hr>
+
+<h2>
+<a id="week-7-support-vector-machines" class="anchor" href="#week-7-support-vector-machines" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week 7: Support Vector Machines</h2>
+
+<p><i><b>Motivation</b> : NN are old! Time for the new era - SVMs..! </i><br>
+This week deals with a whole new kind of approach to Machine Learning. Till now, every feature you've used was user defined. With SVMs you don't need to define the features. The features are defined by each training example! Weird? Read this <a href="https://prieuredesion.github.io/machine%20learning/2016/06/18/svm-kernel.html">blog post</a> to understand, before starting the week. The videos lectures talk about the much needed math behind the Large Margin Intuition, and is a must watch. It later talks about the <em>kernels</em>, which are simple functions that allow each training example to be used as a training feature. The Gaussian and Linear kernels are very well presented. The assignment involves building your own SVM for a simple classification problem firstly, and then for a vocabulary-based spam classifier. Personally, I feel that there's nothing much to do because the <code>svmTrain.m</code> function given is a readymade and there is hardly any input from your side. I recommend that you open the file in edit mode and try to understand the function <em>(for application purposes, a given function is sufficient, but what use is just that if you can do better ;) )</em>.<br>
+<i><b>Assignment Difficulty</b> : Moderate </i>  </p>
+
+<hr>
+
+<p>I am still pursuing this course and hence will update further sections of this page soon. For nay suggestions/complaints/reviews feel free to ping me any time! Also, have a look at my <a href="https://prieuredesion.github.io/">website</a>! Thank you so much for visiting.!</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/PrieureDeSion/ML">Machine Learning</a> is maintained by <a href="https://github.com/PrieureDeSion">PrieureDeSion</a>.</span>
