@@ -43,9 +43,25 @@ Theta_grad = zeros(size(Theta));
 
 
 
+sig = (X*Theta' - Y).^2;
+J = 0.5*sum(sum(sig.*R)) + 0.5*lambda*(sum(sum(X.^2))+sum(sum(Theta.^2))) ;
 
 
+for i = 1:size(X,1)
+idx = find(R(i,:)==1);
+ThetaT = Theta(idx,:);
+YT = Y(i,idx);
+X_grad(i,:) = (X(i,:)*ThetaT' - YT)*ThetaT + lambda*X(i,:);
+end
 
+
+for i = 1:size(Theta,1)
+idx = find(R(:,i)==1);
+XT = X(idx,:);
+YT = Y(idx,i);
+Theta_grad(i,:) = (XT*Theta(i,:)' - YT)'*XT + lambda*Theta(i,:);
+end
+  
 
 
 

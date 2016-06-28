@@ -22,11 +22,13 @@ sigma2 = zeros(n, 1);
 %
 
 
+mu = sum(X, 1)'/m;
 
+for j = 1:m
+sigma2 = sigma2 + (X(j,:)'-mu).^2;
+end
 
-
-
-
+sigma2 = sigma2/m;
 
 
 

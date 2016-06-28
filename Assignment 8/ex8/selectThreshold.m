@@ -24,13 +24,18 @@ for epsilon = min(pval):stepsize:max(pval)
     %       of 0's and 1's of the outlier predictions
 
 
+predict = (pval<epsilon); % =1 implies anomalous example
+trueP = (predict&yval);
 
-
-
-
-
-
-
+if sum(predict)!=0
+precision = (sum(trueP))/(sum(predict));
+else precision = 0;
+end
+if sum(yval)!=0
+recall = (sum(trueP))/(sum(yval));
+else recall=0;
+end
+F1 = 2*(precision*recall)/(precision+recall);
 
 
 
